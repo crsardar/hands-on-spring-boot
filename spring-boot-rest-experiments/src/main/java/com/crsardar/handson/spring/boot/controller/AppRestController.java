@@ -1,6 +1,5 @@
 package com.crsardar.handson.spring.boot.controller;
 
-import com.crsardar.handson.spring.boot.com.crsardar.handson.spring.boot.model.Person;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -9,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.crsardar.handson.spring.boot.model.Person;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package com.crsardar.handson.spring.boot.com.crsardar.handson.spring.boot.model;
+package com.crsardar.handson.spring.boot.model;
 
 public class Person
 {
