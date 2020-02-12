@@ -9,21 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AppRestController
 {
-    @RequestMapping(value = "person-xml", method = RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE)
+    /*
+    For http://localhost:8080//spring-boot-rest-experiments/person.json
+        http://localhost:8080//spring-boot-rest-experiments/person.xml
+     */
+    @RequestMapping(value = "person", method = RequestMethod.GET,
+            produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public Person getPersonXML()
-    {
-        Person person = new Person();
-        person.setId(1);
-        person.setFirstName("Ohmkar");
-        person.setLastName("Shiva");
-        person.setVillage("Kailash");
-        person.setCountry("India");
-
-        return person;
-    }
-
-    @RequestMapping(value = "person-json", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Person getPersonJSON()
     {
         Person person = new Person();
         person.setId(1);
@@ -38,6 +30,6 @@ public class AppRestController
     @RequestMapping(method = RequestMethod.GET)
     public String test()
     {
-        return "/hello-spring-boot: Is Up & Running!";
+        return "/spring-boot-rest-experiments : Is Up & Running!";
     }
 }
