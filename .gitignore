@@ -1,0 +1,11 @@
+**/.idea
+**/.gradle
+**/logs
+**/target
+**/generated
+**/out
+**/local-experiments
+*.iml
+*.class 
+/.metadata/
+**/.DS_Store
