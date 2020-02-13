@@ -4,7 +4,10 @@ package com.crsardar.handson.spring.boot.config;
  * @author Chittaranjan Sardar
  */
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.security.KeyManagementException;
+import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.TimeUnit;
@@ -64,8 +67,14 @@ public class HttpClientConfig {
     @Bean
     public PoolingHttpClientConnectionManager poolingConnectionManager() throws Exception{
 
+
+//        KeyStore keyStore  = KeyStore.getInstance("PKCS12");
+//        FileInputStream fileInputStream = new FileInputStream(new File("client-p12-keystore.p12"));
+//        keyStore.load(fileInputStream, "helloworld".toCharArray());
+
+
         SSLContextBuilder sslContextBuilder = new SSLContextBuilder();
-        sslContextBuilder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
+        sslContextBuilder.loadTrustMaterial(null /*keyStore*/, new TrustSelfSignedStrategy());
 
         SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContextBuilder.build());
 
