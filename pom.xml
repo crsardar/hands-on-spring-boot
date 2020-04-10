@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>hello-spring-boot</module>
-        <module>pring-boot-rest-experiments</module>
+        <module>spring-boot-rest-experiments</module>
     </modules>
 
     <properties>
