@@ -11,6 +11,7 @@
     <modules>
         <module>hello-spring-boot</module>
         <module>spring-boot-rest-experiments</module>
+        <module>hello-docker-spring-boot</module>
     </modules>
 
     <properties>

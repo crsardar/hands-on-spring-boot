@@ -1,6 +1,6 @@
 package com.crsardar.handson.spring.boot.controller;
 
-import com.crsardar.handson.spring.boot.com.crsardar.handson.spring.boot.model.Person;
+import com.crsardar.handson.spring.boot.model.Person;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

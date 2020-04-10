@@ -2,14 +2,14 @@
  * @author Chittaranjan Sardar
  */
 
-package com.crsardar.handson.spring.boot.app;
+package com.crsardar.handson.docker.spring.boot.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.crsardar.handson.spring.boot"})
+@ComponentScan(basePackages = {"com.crsardar.handson.docker.spring.boot"})
 public class App
 {
     public static void main(String[] args)
