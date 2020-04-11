@@ -9,16 +9,16 @@ Steps -
 
 4. Create Docker image -
     
-    docker build -t crsardar/hello-docker-spring-boot .
+    sudo docker build -t crsardar/hello-docker-spring-boot .
     
     // from the dir where th Dockerfile is located
     
 5. Run an instance of the Docker image
 
-    docker run -p 8080:8080 -t crsardar/hello-docker-spring-boot
+    sudo docker run -p 8080:8080 -t crsardar/hello-docker-spring-boot
 
    // To release console add " &" at the end
-   //like - "docker run -p 8080:8080 -t crsardar/hello-docker-spring-boot &"
+   //Like - "sudo docker run -p 8080:8080 -t crsardar/hello-docker-spring-boot &"
     
 7. Test - http://localhost:8080/hello-docker-spring-boot/
 
