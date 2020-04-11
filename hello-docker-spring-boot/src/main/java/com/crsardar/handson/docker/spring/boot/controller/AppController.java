@@ -13,6 +13,6 @@ public class AppController
     @GetMapping("/")
     public String helloSpringBootInDocker(){
 
-        return "Hi there, I am the SpringBoot running inside a Docker Container!";
+        return "Hello World, SpringBoot indide a Docker Container!";
     }
 }
