@@ -1,0 +1,10 @@
+version: '3'
+services:
+  spring-boot:
+    image: "crsardar/hello-docker-spring-boot:latest"
+    ports:
+      - "8080:8080"
+  nodejs:
+    image: "crsardar/hello-docker-nodejs:latest"
+    ports:
+      - "8090:8090"

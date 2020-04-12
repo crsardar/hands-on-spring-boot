@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AppController
 {
+    private int count = 0;
+
     @GetMapping("/")
     public String helloSpringBootInDocker(){
 
-        return "Hi there, I am the SpringBoot running inside a Docker Container!";
+        count++;
+        return "Hello World, SpringBoot in Docker Container! Count = " + count;
     }
 }
