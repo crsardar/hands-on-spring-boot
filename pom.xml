@@ -12,6 +12,7 @@
         <module>hello-spring-boot</module>
         <module>spring-boot-rest-experiments</module>
         <module>hello-docker-spring-boot</module>
+        <module>spring-random</module>
     </modules>
 
     <properties>
