@@ -1,4 +1,4 @@
-package com.crsardar.handson.spring.random;
+package com.crsardar.springbootinitializer;
 
 public class Book
 {
