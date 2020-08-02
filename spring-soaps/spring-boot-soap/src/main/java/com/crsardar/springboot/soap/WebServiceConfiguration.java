@@ -17,32 +17,31 @@ public class WebServiceConfiguration {
 
 	@Bean
 	public ServletRegistrationBean manageDispatcherServlet(ApplicationContext applicationContext) {
-		
+
 		MessageDispatcherServlet messageDispatcherServlet = new MessageDispatcherServlet();
 		messageDispatcherServlet.setApplicationContext(applicationContext);
 		messageDispatcherServlet.setTransformWsdlLocations(true);
-		
+
 		ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(messageDispatcherServlet,
 				"/ws/*");
 
 		return servletRegistrationBean;
 	}
-	
+
 	@Bean(name = "courses")
 	public DefaultWsdl11Definition getDefaultWsdl11Definition(XsdSchema courseScema) {
-		
+
 		DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
 		defaultWsdl11Definition.setPortTypeName("CoursePort");
 		defaultWsdl11Definition.setTargetNamespace("http://com.crsardar.springboot.soap/courses");
 		defaultWsdl11Definition.setLocationUri("/ws");
 		defaultWsdl11Definition.setSchema(courseScema);
-		
+
 		return defaultWsdl11Definition;
 	}
-	
+
 	@Bean
-	public XsdSchema courseScema()
-	{
+	public XsdSchema courseScema() {
 		return new SimpleXsdSchema(new ClassPathResource("course-details.xsd"));
 	}
 }
