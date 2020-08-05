@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<GetCourseDetailsRequest
-	xmlns="http://com.crsardar.springboot.soap/courses"
-	xsi:schemaLocation="http://com.crsardar.springboot.soap/courses course-details.xsd"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<id>123</id>
-</GetCourseDetailsRequest>
