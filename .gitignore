@@ -9,3 +9,6 @@
 *.class 
 /.metadata/
 **/.DS_Store
+**/.mvn
+**/mvnw
+**/mvnw.cmd
