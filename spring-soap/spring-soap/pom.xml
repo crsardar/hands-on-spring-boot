@@ -101,7 +101,7 @@
 					<packageName>com.crsardar.springsoap.models</packageName>
 					<clearOutputDir>false</clearOutputDir>
 					<sources>
-						<source>${project.basedir}/src/main/resources/course-details.xsd</source>
+						<source>${project.basedir}/src/main/resources/emp-details.xsd</source>
 					</sources>
 				</configuration>
 			</plugin>

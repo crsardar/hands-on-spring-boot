@@ -28,20 +28,20 @@ public class WebServiceConfiguration {
         return servletRegistrationBean;
     }
 
-    @Bean(name = "courses")
-    public DefaultWsdl11Definition getDefaultWsdl11Definition(XsdSchema courseScema) {
+    @Bean(name = "employee") // For http://localhost:8080/ws/employee.wsdl
+    public DefaultWsdl11Definition getDefaultWsdl11Definition(XsdSchema courseSchema) {
 
         DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
-        defaultWsdl11Definition.setPortTypeName("CoursePort");
-        defaultWsdl11Definition.setTargetNamespace("http://com.crsardar.springboot.soap/courses");
+        defaultWsdl11Definition.setPortTypeName("EmpPort");
+        defaultWsdl11Definition.setTargetNamespace("http://com.crsardar.springboot.soap/emp");
         defaultWsdl11Definition.setLocationUri("/ws");
-        defaultWsdl11Definition.setSchema(courseScema);
+        defaultWsdl11Definition.setSchema(courseSchema);
 
         return defaultWsdl11Definition;
     }
 
     @Bean
-    public XsdSchema courseScema() {
-        return new SimpleXsdSchema(new ClassPathResource("course-details.xsd"));
+    public XsdSchema courseSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("emp-details.xsd"));
     }
 }

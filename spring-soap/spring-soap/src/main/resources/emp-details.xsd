@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://com.crsardar.springboot.soap/emp"
+	xmlns:tns="http://com.crsardar.springboot.soap/emp"
+	elementFormDefault="qualified">
+
+	<element name="GetEmployeeRequest">
+		<complexType>
+			<sequence>
+				<element name="id" type="int" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="GetEmployeeResponse">
+		<complexType>
+			<sequence>
+				<element name="EmployeeDetails" type="tns:EmployeeDetails" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="EmployeeDetails">
+		<sequence>
+			<element name="id" type="int" />
+			<element name="name" type="string" />
+			<element name="description" type="string" />
+		</sequence>
+	</complexType>
+
+	<element name="GetAllEmployeeRequest">
+		<complexType>
+			<sequence>
+				<element name="count" type="int"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="GetAllEmployeeResponse">
+		<complexType>
+			<sequence>
+				<element name="Employees" type="tns:EmployeeDetails" maxOccurs="unbounded"></element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
