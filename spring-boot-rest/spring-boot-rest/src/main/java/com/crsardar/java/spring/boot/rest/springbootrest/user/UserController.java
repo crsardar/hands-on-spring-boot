@@ -2,11 +2,14 @@ package com.crsardar.java.spring.boot.rest.springbootrest.user;
 
 import com.crsardar.java.spring.boot.rest.springbootrest.dao.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -20,7 +23,7 @@ public class UserController {
 
         User user = userService.getUser(id);
         if(user == null)
-            throw new RuntimeException("Invalid user id = " + id);
+            throw new UseNotFoundException("Invalid user id = " + id);
 
         return user;
     }
@@ -35,8 +38,10 @@ public class UserController {
     public ResponseEntity<User> createUser(@RequestBody User user) {
 
         if (user == null) {
-            return null;
+            throw new GenericUserException("This operation is not allowed.");
         }
+        if(user.getFirstName() == null || "".equals(user.getFirstName().trim()))
+            throw new GenericUserException("User's First Name can not be empty.");
 
         User newUser = userService.addUser(user);
 
@@ -47,5 +52,45 @@ public class UserController {
                 .toUri();
 
         return ResponseEntity.created(uri).build();
+    }
+
+    @DeleteMapping("/users/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable Integer id) throws Exception
+    {
+        if(id == null || id <= 0)
+        {
+            throw new RuntimeException("Are you mad? Given user id = " + id + ".");
+        }
+
+        ResponseEntity<String> responseEntity = null;
+
+        Integer integer = userService.removeUser(id);
+        if(integer != null)
+        {
+            responseEntity = ResponseEntity.status(HttpStatus.OK).body("User with id = " + id + " is deleted successfully.");
+        }
+        else
+        {
+            throw new RuntimeException("User with id = " + id + " does not exist.");
+        }
+        return responseEntity;
+    }
+
+    @ExceptionHandler(GenericUserException.class) // NOTE - It has Highest Priority. It will over-ride @ControllerAdvice & @ResponseStatus
+    public ResponseEntity<UserErrorMessage> handleErrors(Exception ex) throws Exception
+    {
+        System.out.println("UserController#handleErrors in action.");
+
+        // This will over-ride @ResponseStatus
+        // If it is already handled by @ResponseStatus, then let that work.
+//        if(AnnotationUtils.findAnnotation(ex.getClass(), ResponseStatus.class) != null)
+//        {
+//            throw ex;
+//        }
+
+        UserErrorMessage userErrorMessage = new UserErrorMessage(new Date(), ex.getMessage());
+
+        ResponseEntity<UserErrorMessage> responseEntity = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(userErrorMessage);
+        return responseEntity;
     }
 }

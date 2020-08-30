@@ -61,7 +61,7 @@ public class UserDAO {
                 return id;
             }
         }
-        return -1;
+        return null;
     }
 
     public Integer removeUser(final User user) {
