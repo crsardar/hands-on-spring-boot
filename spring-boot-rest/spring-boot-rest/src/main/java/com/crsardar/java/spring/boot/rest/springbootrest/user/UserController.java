@@ -2,12 +2,12 @@ package com.crsardar.java.spring.boot.rest.springbootrest.user;
 
 import com.crsardar.java.spring.boot.rest.springbootrest.dao.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.Date;
 import java.util.List;
@@ -23,7 +23,7 @@ public class UserController {
 
         User user = userService.getUser(id);
         if(user == null)
-            throw new UseNotFoundException("Invalid user id = " + id);
+            throw new UserNotFoundException("Invalid user id = " + id);
 
         return user;
     }
@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
 
         if (user == null) {
             throw new GenericUserException("This operation is not allowed.");
@@ -64,14 +64,14 @@ public class UserController {
 
         ResponseEntity<String> responseEntity = null;
 
-        Integer integer = userService.removeUser(id);
-        if(integer != null)
+        User user = userService.deleteUser(id);
+        if(user != null)
         {
             responseEntity = ResponseEntity.status(HttpStatus.OK).body("User with id = " + id + " is deleted successfully.");
         }
         else
         {
-            throw new RuntimeException("User with id = " + id + " does not exist.");
+            throw new UserNotFoundException("User with id = " + id + " does not exist.");
         }
         return responseEntity;
     }

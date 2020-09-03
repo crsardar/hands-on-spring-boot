@@ -6,28 +6,28 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 //        This will override the constructor message
 //        , reason = "User not found"
 )
-public class UseNotFoundException extends RuntimeException
+public class UserNotFoundException extends RuntimeException
 {
-    public UseNotFoundException()
+    public UserNotFoundException()
     {
     }
 
-    public UseNotFoundException(String message)
+    public UserNotFoundException(String message)
     {
         super(message);
     }
 
-    public UseNotFoundException(String message, Throwable cause)
+    public UserNotFoundException(String message, Throwable cause)
     {
         super(message, cause);
     }
 
-    public UseNotFoundException(Throwable cause)
+    public UserNotFoundException(Throwable cause)
     {
         super(cause);
     }
 
-    public UseNotFoundException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    public UserNotFoundException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
     {
         super(message, cause, enableSuppression, false);
     }

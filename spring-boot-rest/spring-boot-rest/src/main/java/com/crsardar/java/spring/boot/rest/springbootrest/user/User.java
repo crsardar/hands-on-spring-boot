@@ -1,13 +1,21 @@
 package com.crsardar.java.spring.boot.rest.springbootrest.user;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.Objects;
 
 public class User {
 
     private Integer id;
+
+    @Size(min = 2)
     private String firstName;
+
+    @Size(min = 2)
     private String lastName;
+
+    @Past(message = "Date of Birth can not be in the future.")
     private Date dob;
 
     public User() {

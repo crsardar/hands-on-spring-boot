@@ -48,7 +48,7 @@ public class UserDAO {
         return user;
     }
 
-    public Integer removeUser(final Integer id) {
+    public User deleteUser(final Integer id) {
 
         Iterator<User> iterator = userList.iterator();
 
@@ -58,7 +58,7 @@ public class UserDAO {
             if (user.getId() == id) {
 
                 iterator.remove();
-                return id;
+                return user;
             }
         }
         return null;
