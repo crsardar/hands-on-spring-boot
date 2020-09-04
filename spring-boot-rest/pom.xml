@@ -23,6 +23,8 @@
 
     <modules>
         <module>spring-boot-rest-common</module>
+        <module>spring-boot-internationalization-one</module>
+        <module>spring-boot-internationalization-two</module>
     </modules>
 
 </project>
