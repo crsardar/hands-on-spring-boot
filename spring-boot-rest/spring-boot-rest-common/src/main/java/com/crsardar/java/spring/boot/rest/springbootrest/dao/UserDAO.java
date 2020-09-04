@@ -1,12 +1,13 @@
 package com.crsardar.java.spring.boot.rest.springbootrest.dao;
 
-import com.crsardar.java.spring.boot.rest.springbootrest.user.User;
 import org.springframework.stereotype.Service;
 
+import com.crsardar.java.spring.boot.rest.springbootrest.user.User;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+
 
 @Service
 public class UserDAO {

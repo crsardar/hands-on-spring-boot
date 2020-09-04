@@ -15,13 +15,6 @@ public class SuperExceptionHandler
     {
         System.out.println("SuperExceptionHandler#handleException in action.");
 
-        // This will over-ride @ResponseStatus
-        // If it is already handled by @ResponseStatus, then let that work.
-        if(AnnotationUtils.findAnnotation(e.getClass(), ResponseStatus.class) != null)
-        {
-            throw e;
-        }
-
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("Some problem in Server, unable to process your request.\nDetails - " + e.getMessage());
     }
