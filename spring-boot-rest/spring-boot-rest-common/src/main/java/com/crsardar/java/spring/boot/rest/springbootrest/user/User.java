@@ -1,5 +1,9 @@
 package com.crsardar.java.spring.boot.rest.springbootrest.user;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -15,6 +19,8 @@ public class User {
     @Size(min = 2)
     private String lastName;
 
+    @NotNull
+    @Schema(description = "Can not be future date")
     @Past(message = "Date of Birth can not be in the future.")
     private Date dob;
 
