@@ -32,6 +32,25 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
+        <!--- Content Negotiation : Need to add ONLY this dependency, Nothing else -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+        </dependency>
+
+        <!--- Open API 3 & Swagger : Need to add ONLY this dependency, Nothing else
+            Try -
+            http://127.0.0.1:8080/v3/api-docs
+            http://127.0.0.1:8080/swagger-ui.html
+         -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.4.6</version>
+        </dependency>
+
+        <!--- -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
