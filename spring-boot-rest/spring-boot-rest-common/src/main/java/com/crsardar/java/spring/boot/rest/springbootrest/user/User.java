@@ -1,5 +1,7 @@
 package com.crsardar.java.spring.boot.rest.springbootrest.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
@@ -9,6 +11,7 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.Objects;
 
+@JsonIgnoreProperties(value = {"lastName"})
 public class User {
 
     private Integer id;
@@ -17,6 +20,7 @@ public class User {
     private String firstName;
 
     @Size(min = 2)
+//    @JsonIgnore
     private String lastName;
 
     @NotNull
