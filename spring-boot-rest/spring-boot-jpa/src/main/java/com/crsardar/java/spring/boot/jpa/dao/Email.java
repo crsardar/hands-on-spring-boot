@@ -2,8 +2,11 @@ package com.crsardar.java.spring.boot.jpa.dao;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-public class Email {
+public class Email
+{
 
     @Id
     @GeneratedValue
@@ -11,52 +14,70 @@ public class Email {
 
     private String emailId;
 
-    private EmailTypes emailType;
+    private EmailTypes emailType = EmailTypes.HOME;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    public Email() {
+    public Email()
+    {
     }
 
-    public Email(String emailId, EmailTypes emailType) {
+    public Email(String emailId, EmailTypes emailType)
+    {
         this.emailId = emailId;
         this.emailType = emailType;
     }
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id)
+    {
         this.id = id;
     }
 
-    public String getEmailId() {
+    public String getEmailId()
+    {
         return emailId;
     }
 
-    public void setEmailId(String emailId) {
+    public void setEmailId(String emailId)
+    {
         this.emailId = emailId;
     }
 
-    public EmailTypes getEmailType() {
+    public EmailTypes getEmailType()
+    {
         return emailType;
     }
 
-    public void setEmailType(EmailTypes emailType) {
+    public void setEmailType(EmailTypes emailType)
+    {
         this.emailType = emailType;
     }
 
-    public User getUser() {
+    public User getUser()
+    {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(User user)
+    {
         this.user = user;
     }
 
-    public static enum EmailTypes{
+    @Override
+    public String toString()
+    {
+        return "Email{" + "id=" + id + ", emailId='" + emailId + '\'' + ", emailType=" + emailType + '}';
+    }
+
+    public static enum EmailTypes
+    {
         HOME,
         WORK,
         OTHER
