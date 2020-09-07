@@ -25,6 +25,7 @@
         <module>spring-boot-rest-common</module>
         <module>spring-boot-internationalization-one</module>
         <module>spring-boot-internationalization-two</module>
+        <module>spring-boot-jpa</module>
     </modules>
 
 </project>
