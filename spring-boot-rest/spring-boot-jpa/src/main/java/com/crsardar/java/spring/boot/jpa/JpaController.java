@@ -12,9 +12,11 @@ import com.crsardar.java.spring.boot.jpa.dao.User;
 import com.crsardar.java.spring.boot.jpa.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/jpa")
 public class JpaController
 {
     @Autowired

@@ -1,4 +1,4 @@
-package com.crsardar.java.spring.boot.jpa;
+package com.crsardar.java.spring.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
