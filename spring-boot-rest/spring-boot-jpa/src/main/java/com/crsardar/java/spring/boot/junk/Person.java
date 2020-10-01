@@ -3,7 +3,6 @@ package com.crsardar.java.spring.boot.junk;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQuery;
 
 @Entity

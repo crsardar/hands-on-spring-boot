@@ -1,21 +1,19 @@
 package com.crsardar.java.spring.boot.jpa.dao;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.org.glassfish.gmbal.Description;
+import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedNativeQuery;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
-import java.util.Date;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.org.glassfish.gmbal.Description;
 
 @Entity(name = "user")
-@NamedNativeQuery(name = "select_all_users", query = "SELECT u FROM User u")
 public class User {
 
     @Id

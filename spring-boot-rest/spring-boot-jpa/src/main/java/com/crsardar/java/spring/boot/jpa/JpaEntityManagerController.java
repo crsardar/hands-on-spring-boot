@@ -1,9 +1,7 @@
 package com.crsardar.java.spring.boot.jpa;
 
-import java.util.List;
-
-import com.crsardar.java.spring.boot.jpa.dao.EntityManagerRepo;
 import com.crsardar.java.spring.boot.jpa.dao.User;
+import com.crsardar.java.spring.boot.jpa.entitymanager.EntityManagerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,9 +25,9 @@ public class JpaEntityManagerController
         return entityManagerRepo.getUserById(id);
     }
 
-    @GetMapping("/users")
-    public List<User> getAllUsers()
-    {
-        return entityManagerRepo.getAllUsers();
-    }
+//    @GetMapping("/users")
+//    public List<User> getAllUsers()
+//    {
+//        return entityManagerRepo.getAllUsers();
+//    }
 }

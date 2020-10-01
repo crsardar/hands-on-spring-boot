@@ -1,10 +1,8 @@
-package com.crsardar.java.spring.boot.jpa.dao;
-
-import java.util.List;
+package com.crsardar.java.spring.boot.jpa.entitymanager;
 
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
+import com.crsardar.java.spring.boot.jpa.dao.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -20,9 +18,9 @@ public class EntityManagerRepo
         return user;
     }
 
-    public List<User> getAllUsers()
-    {
-        TypedQuery<User> select_all_users = entityManager.createNamedQuery("select_all_users", User.class);
-        return select_all_users.getResultList();
-    }
+//    public List<User> getAllUsers()
+//    {
+//        TypedQuery<User> select_all_users = entityManager.createNamedQuery("select_all_users", User.class);
+//        return select_all_users.getResultList();
+//    }
 }

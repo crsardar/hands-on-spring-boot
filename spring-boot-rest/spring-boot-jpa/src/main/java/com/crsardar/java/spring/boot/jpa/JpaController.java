@@ -5,11 +5,11 @@ import java.util.Date;
 import java.util.List;
 
 import com.crsardar.java.spring.boot.jpa.dao.Email;
-import com.crsardar.java.spring.boot.jpa.dao.EmailRepo;
+import com.crsardar.java.spring.boot.jpa.repo.EmailRepo;
 import com.crsardar.java.spring.boot.jpa.dao.PhoneNumber;
-import com.crsardar.java.spring.boot.jpa.dao.PhoneRepo;
+import com.crsardar.java.spring.boot.jpa.repo.PhoneRepo;
 import com.crsardar.java.spring.boot.jpa.dao.User;
-import com.crsardar.java.spring.boot.jpa.dao.UserRepository;
+import com.crsardar.java.spring.boot.jpa.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
