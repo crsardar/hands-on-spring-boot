@@ -28,3 +28,13 @@ INSERT  INTO Review (id, rating, description, course_id) VALUES (50002, '5', 'Wo
 INSERT  INTO Review (id, rating, description, course_id) VALUES (50003, '5', 'Awasome Course', 11002);
 INSERT  INTO Review (id, rating, description, course_id) VALUES (50004, '5', 'Fabolus Course', 11004);
 INSERT  INTO Review (id, rating, description, course_id) VALUES (50005, '5', 'Amazing Course', 11003);
+
+-- Student_Course
+INSERT  INTO Student_Course (student_id, course_id) VALUES (20001, 11001);
+INSERT  INTO Student_Course (student_id, course_id) VALUES (20003, 11001);
+INSERT  INTO Student_Course (student_id, course_id) VALUES (20001, 11002);
+INSERT  INTO Student_Course (student_id, course_id) VALUES (20002, 11002);
+INSERT  INTO Student_Course (student_id, course_id) VALUES (20003, 11002);
+INSERT  INTO Student_Course (student_id, course_id) VALUES (20001, 11003);
+INSERT  INTO Student_Course (student_id, course_id) VALUES (20002, 11004);
+INSERT  INTO Student_Course (student_id, course_id) VALUES (20003, 11004);

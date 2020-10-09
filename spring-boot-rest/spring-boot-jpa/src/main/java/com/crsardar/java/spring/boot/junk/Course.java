@@ -1,6 +1,7 @@
 package com.crsardar.java.spring.boot.junk;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -15,8 +16,8 @@ public class Course
 {
     @Id
     @GeneratedValue
-
     private Long id;
+
     private String name;
 
     @CreationTimestamp
@@ -25,8 +26,11 @@ public class Course
     @UpdateTimestamp
     private LocalDate lastUpdateTime;
 
-    @OneToMany
-    private List<Review> reviews;
+    @OneToMany(mappedBy = "course")
+    private List<Review> reviews = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "courses")
+    private List<Student> students  = new ArrayList<>();
 
     protected Course()
     {
@@ -84,6 +88,21 @@ public class Course
     public boolean removeReview(Review review)
     {
         return reviews.remove(review);
+    }
+
+    public List<Student> getStudents()
+    {
+        return students;
+    }
+
+    public void addStudent(Student student)
+    {
+        this.students.add(student);
+    }
+
+    public boolean removeStudent(Student student)
+    {
+        return students.remove(student);
     }
 
     @Override

@@ -91,4 +91,41 @@ public class CourseRepository
 
         return student;
     }
+
+    public void getStudentAndCourse()
+    {
+        Student student = em.find(Student.class, 20001L);
+
+        logger.info("getStudentAndCourse : student = {}", student);
+        logger.info("getStudentAndCourse : courses = {}", student.getCourses());
+    }
+
+    public void getCourseAndStudent()
+    {
+        Course course = em.find(Course.class, 11001L);
+
+        logger.info("getCourseAndStudent : course = {}", course);
+        logger.info("getCourseAndStudent : students = {}", course.getStudents());
+    }
+
+    public void insertStudentAndCourse()
+    {
+        Student student = new Student("Karamveer Singh", null);
+        em.persist(student);
+
+        Course course = new Course("Micro-Services by Chittaranjan");
+        em.persist(course);
+
+        student.addCourse(course);
+        em.persist(student);
+    }
+
+    public void insertStudentAndCourse(Student student, Course course)
+    {
+        course.addStudent(student);
+        student.addCourse(course);
+
+        em.persist(course); // Here Order Do NOT matter
+        em.persist(student); // Here Order Do NOT matter
+    }
 }

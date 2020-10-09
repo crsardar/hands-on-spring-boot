@@ -10,11 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.transaction.annotation.Transactional;
 
 @ExtendWith(SpringExtension.class) // Launch a SpringBoot Context. Old "@RunWith(SpringRunner.class)"
 @SpringBootTest(classes = JpaApplication.class) // - This make sures lunched SpringBoot Context is a Test Context
-public class CourseRepositoryTest
+public class JunkTests
 {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -78,6 +77,24 @@ public class CourseRepositoryTest
     public void testStudent()
     {
         courseRepository.findStudent(2L);
+    }
 
+    @Test
+    public void testCourseAndStudent()
+    {
+        courseRepository.getStudentAndCourse();
+    }
+
+    @Test
+    public void testStudentAndCourse()
+    {
+        courseRepository.getCourseAndStudent();
+    }
+
+    @Test
+    @DirtiesContext
+    public void testStudentCourseInsertion()
+    {
+        courseRepository.insertStudentAndCourse();
     }
 }
