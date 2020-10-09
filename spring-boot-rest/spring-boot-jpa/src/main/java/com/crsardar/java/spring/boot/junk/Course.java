@@ -1,12 +1,9 @@
 package com.crsardar.java.spring.boot.junk;
 
 import java.time.LocalDate;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -27,6 +24,9 @@ public class Course
 
     @UpdateTimestamp
     private LocalDate lastUpdateTime;
+
+    @OneToMany
+    private List<Review> reviews;
 
     protected Course()
     {
@@ -70,6 +70,20 @@ public class Course
     public void setLastUpdateTime(LocalDate lastUpdateTime)
     {
         this.lastUpdateTime = lastUpdateTime;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void addReview(Review review)
+    {
+        reviews.add(review);
+    }
+
+    public boolean removeReview(Review review)
+    {
+        return reviews.remove(review);
     }
 
     @Override

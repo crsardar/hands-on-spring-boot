@@ -18,13 +18,13 @@ INSERT  INTO Passport (id, number) VALUES (40002, 'A2002');
 INSERT  INTO Passport (id, number) VALUES (40003, 'S3003');
 
 -- Student
-INSERT INTO Student (id, name, passport_id) VALUES (20001, 'Chitta', '40001');
+INSERT INTO Student (id, name) VALUES (20001, 'Chitta');
 INSERT INTO Student (id, name) VALUES (20002, 'Anand');
 INSERT INTO Student (id, name) VALUES (20003, 'Shiva');
 
 -- Review
-INSERT  INTO Review (id, rating, description) VALUES (50001, '5', 'Great Course');
-INSERT  INTO Review (id, rating, description) VALUES (50002, '5', 'Woderful Course');
-INSERT  INTO Review (id, rating, description) VALUES (50003, '5', 'Awasome Course');
-INSERT  INTO Review (id, rating, description) VALUES (50004, '5', 'Fabolus Course');
-INSERT  INTO Review (id, rating, description) VALUES (50005, '5', 'Amazing Course');
+INSERT  INTO Review (id, rating, description, course_id) VALUES (50001, '5', 'Great Course', 11001);
+INSERT  INTO Review (id, rating, description, course_id) VALUES (50002, '5', 'Woderful Course', 11001);
+INSERT  INTO Review (id, rating, description, course_id) VALUES (50003, '5', 'Awasome Course', 11002);
+INSERT  INTO Review (id, rating, description, course_id) VALUES (50004, '5', 'Fabolus Course', 11004);
+INSERT  INTO Review (id, rating, description, course_id) VALUES (50005, '5', 'Amazing Course', 11003);

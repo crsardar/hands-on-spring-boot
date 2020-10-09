@@ -15,7 +15,7 @@ public class Student
 
     private String name;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "student", fetch = FetchType.LAZY)
     private Passport passport;
 
     protected Student()
