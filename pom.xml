@@ -13,9 +13,10 @@
         <module>spring-boot-rest-experiments</module>
         <module>hello-docker-spring-boot</module>
         <module>spring-random</module>
+        <module>spring-boot-rest</module>
 
         <!-- SOAPs -->
-        <module>spring-soaps/spring-boot-soap</module>
+        <module>spring-soap/spring-soap</module>
     </modules>
 
     <properties>

@@ -29,6 +29,7 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
         <!--- Content Negotiation : Need to add ONLY this dependency, Nothing else.
+        Then in request Headers "Accept" = "application/json" OR "application/xml"
         Remove this dependency to produce JSON Only output.
         -->
         <dependency>
