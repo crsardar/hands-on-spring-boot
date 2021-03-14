@@ -54,8 +54,14 @@
 
         <dependency>
             <groupId>org.apache.camel</groupId>
-            <artifactId>camel-openapi-java</artifactId>
+            <artifactId>camel-swagger-java</artifactId>
             <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>3.0.0</version>
         </dependency>
     </dependencies>
 

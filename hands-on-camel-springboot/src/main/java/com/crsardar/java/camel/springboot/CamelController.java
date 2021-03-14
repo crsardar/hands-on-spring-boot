@@ -17,8 +17,8 @@ public class CamelController extends RouteBuilder {
                 .dataFormatProperty("prettyPrint", "true")
                 .contextPath("/").port(8080)
                 .apiContextPath("/api-doc")
-                .apiProperty("api.title", "User API")
-                .apiProperty("api.version", "1.2.3")
+                .apiProperty("api.title", "Person APIs")
+                .apiProperty("api.version", "0.1")
                 .apiProperty("cors", "true");
 
 
